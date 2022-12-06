@@ -1,8 +1,10 @@
+const URL = 'http://127.0.0.1:5000';
+
 $(document).ready(function () {
   function exchange(send, receive, type) {
     if (type == "send") {
       $.ajax({
-        url: "./assets/php/handler.php?send=" + send + "&receive=" + receive,
+        url: URL + "/handler?send=" + send + "&receive=" + receive,
         dataType: "json",
         success: function (data) {
           data = data[receive];
@@ -18,19 +20,17 @@ $(document).ready(function () {
       });
     } else if (type == "receive") {
       $.ajax({
-        url: "./assets/php/handler.php?send=" + send + "&receive=" + receive,
+        url: URL + "/handler?send=" + send + "&receive=" + receive,
         dataType: "json",
         success: function (data) {
           data = data[receive];
           let min =
             (
-              (($(".exchange__block-input-send").data("min") * data) / 100) *
-              bonus
+              (($(".exchange__block-input-send").data("min") * data) / 100) 
             ).toFixed(5) - 0;
           let max =
             (
-              (($(".exchange__block-input-send").data("max") * data) / 100) *
-              bonus
+              (($(".exchange__block-input-send").data("max") * data) / 100)
             ).toFixed(5) - 0;
           $(".exchange__block-text-receive span").text(
             "(" + min + " — " + max + ")"
@@ -42,13 +42,13 @@ $(document).ready(function () {
       });
     } else if (type == "calc") {
       $.ajax({
-        url: "./assets/php/handler.php?send=" + send + "&receive=" + receive,
+        url:  URL + "/handler?send=" + send + "&receive=" + receive,
         dataType: "json",
         success: function (data) {
           data = data[receive];
           let val =
             (
-              (($(".exchange__block-input-receive").val() / bonus) * 100) /
+              (($(".exchange__block-input-receive").val()) * 100) /
               data
             ).toFixed(5) - 0;
           $(".exchange__block-input-send").val(val);
@@ -56,14 +56,13 @@ $(document).ready(function () {
       });
     } else {
       $.ajax({
-        url: "./assets/php/handler.php?send=" + send + "&receive=" + receive,
+        url:  URL + "/handler?send=" + send + "&receive=" + receive,
         dataType: "json",
         success: function (data) {
           data = data[receive];
           let val =
             (
-              (($(".exchange__block-input-send").val() * data) / 100) *
-              bonus
+              (($(".exchange__block-input-send").val() * data) / 100)
             ).toFixed(5) - 0;
           $(".exchange__block-input-receive").val(val);
         },
@@ -280,7 +279,7 @@ $(document).ready(function () {
 
     if (error == 0) {
       $.ajax({
-        url: "./assets/php/getWallet.php",
+        url: URL + "/getWallet",
         method: "post",
         data: {
           coin: $(
@@ -289,7 +288,7 @@ $(document).ready(function () {
         },
         success: function (address) {
           $.ajax({
-            url: "./assets/php/createOrder.php",
+            url: URL + "/createOrder",
             method: "post",
             data: {
               receiveAddress: $(".exchange__block-input-receive-address").val(),
@@ -310,7 +309,7 @@ $(document).ready(function () {
               toCoinVal: $(".exchange__block-input-receive").val(),
             },
             success: function (data) {
-              location.href = "transaction.php?id=" + data;
+              location.href = "transaction?id=" + data;
             },
           });
         },
