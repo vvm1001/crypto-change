@@ -26,11 +26,11 @@ $(document).ready(function () {
           data = data[receive];
           let min =
             (
-              (($(".exchange__block-input-send").data("min") * data) / 100) 
+              (($(".exchange__block-input-send").data("min") * data) ) 
             ).toFixed(5) - 0;
           let max =
             (
-              (($(".exchange__block-input-send").data("max") * data) / 100)
+              (($(".exchange__block-input-send").data("max") * data) )
             ).toFixed(5) - 0;
           $(".exchange__block-text-receive span").text(
             "(" + min + " — " + max + ")"
@@ -62,7 +62,7 @@ $(document).ready(function () {
           data = data[receive];
           let val =
             (
-              (($(".exchange__block-input-send").val() * data) / 100)
+              (($(".exchange__block-input-send").val() * data) )
             ).toFixed(5) - 0;
           $(".exchange__block-input-receive").val(val);
         },
