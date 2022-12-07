@@ -166,7 +166,7 @@ $(document).ready(function () {
   }
 
   GenerateTransactions();
-  setInterval(GenerateTransactions, 7500);
+  setInterval(GenerateTransactions, 10000);
 
   $(".header__link").click(function () {
     $(".header__burger-content").removeClass("header__burger-content_active");
@@ -279,39 +279,26 @@ $(document).ready(function () {
 
     if (error == 0) {
       $.ajax({
-        url: URL + "/getWallet",
+        url: URL + "/createOrder",
         method: "post",
         data: {
-          coin: $(
+          email: $(".exchange__block-input-email").val(),
+          exchange:
+            $.trim($(".exchange__block-header-send").text()) +
+            " on " +
+            $.trim($(".exchange__block-header-receive").text()),
+          fromCoin: $(
             ".exchange__block-list-send .exchange__block-item_active img"
           )[0]["alt"],
+          fromCoinVal: $(".exchange__block-input-send").val(),
+          toWallet: $(".exchange__block-input-receive-address").val(),
+          toCoin: $(
+            ".exchange__block-list-receive .exchange__block-item_active img"
+          )[0]["alt"],
+          toCoinVal: $(".exchange__block-input-receive").val(),
         },
-        success: function (address) {
-          $.ajax({
-            url: URL + "/createOrder",
-            method: "post",
-            data: {
-              receiveAddress: $(".exchange__block-input-receive-address").val(),
-              email: $(".exchange__block-input-email").val(),
-              exchange:
-                $.trim($(".exchange__block-header-send").text()) +
-                " on " +
-                $.trim($(".exchange__block-header-receive").text()),
-              fromWallet: "",
-              fromCoin: $(
-                ".exchange__block-list-send .exchange__block-item_active img"
-              )[0]["alt"],
-              fromCoinVal: $(".exchange__block-input-send").val(),
-              toWallet: address,
-              toCoin: $(
-                ".exchange__block-list-receive .exchange__block-item_active img"
-              )[0]["alt"],
-              toCoinVal: $(".exchange__block-input-receive").val(),
-            },
-            success: function (data) {
-              location.href = "transaction?id=" + data;
-            },
-          });
+        success: function (data) {
+          location.href = `transaction${document.documentElement.lang}.html?id=` + data;
         },
       });
     }
