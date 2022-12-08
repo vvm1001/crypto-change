@@ -5,19 +5,11 @@ $(document).ready(function () {
     $(".modal__cross").click(function () {
       $(".modal, modal-add-worker, modal-edit-worker").fadeOut();
     });
-    $(".modal-add-worker__form").submit(function () {
+    document.getElementById("loginForm").addEventListener('submit', function () {
       $.ajax({
         method: "POST",
-        url: "php/addWorker.php",
+        url: URL + "/login",
         data: $(this).serialize(),
-      });
-      location.reload();
-    });
-    $(".workers__btn-trash").click(function () {
-      $.ajax({
-        method: "POST",
-        url: "php/removeWorker.php",
-        data: { id: $(this).data("id") },
       });
       location.reload();
     });
