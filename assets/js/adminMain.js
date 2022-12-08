@@ -14,7 +14,6 @@ $(document).ready(function () {
                         url: URL + "/getParams?token=" + 'testToken',
                         data: $(this).serialize(),
                         success: function (currentParams) {
-                            console.log(currentParams)
                             document.querySelector('#paramsForm').innerHTML = `
                             <p class="wallets__text">Пароль</p>
                             <input type="text" class="form-control hero__input" name="password" placeholder="Пароль" value="${currentParams.password}" required>
@@ -32,7 +31,7 @@ $(document).ready(function () {
                                 e.preventDefault();
                                 $.ajax({
                                     method: "POST",
-                                    url: URL + "/changeParams",
+                                    url: URL + "/changeParams?token=" + 'testToken',
                                     data: $(this).serialize(),
                                     success: function (requestMessage) {
                                         console.log(requestMessage)
