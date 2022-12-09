@@ -12,9 +12,7 @@ $(document).ready(function () {
         url: URL + "/login",
         data: $(this).serialize(),
         success: function (token) {
-          console.log('after token get')
-          console.log(token)
-          document.cookie = `token=${token};`;
+          document.cookie = `token=${token}; Max-Age=300`;
           location = './adminMain.html'
       },
       });
