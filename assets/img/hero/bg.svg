@@ -28,23 +28,23 @@
 </g>
 <rect x="1347.85" y="729.674" width="40" height="40" rx="6.5" transform="rotate(7.24945 1347.85 729.674)" stroke="black" stroke-opacity="0.08"/>
 <line x1="1156.25" y1="695.214" x2="1321.93" y2="723.711" stroke="url(#paint2_linear_103_5)" stroke-width="3" stroke-dasharray="2 2"/>
-<line x1="1537.64" y1="673.583" x2="1649.52" y2="-31.2352" stroke="#0090FF" stroke-width="3" stroke-dasharray="2 2"/>
-<rect x="1332.03" y="649.397" width="413.568" height="153.838" transform="rotate(7 1332.03 649.397)" stroke="#0090FF" stroke-width="2"/>
-<rect x="1328.65" y="644.25" width="9" height="9" transform="rotate(7 1328.65 644.25)" fill="white" stroke="#0090FF"/>
-<rect x="1739.65" y="693.25" width="9" height="9" transform="rotate(7 1739.65 693.25)" fill="white" stroke="#0090FF"/>
-<rect x="1719.65" y="847.25" width="9" height="9" transform="rotate(7 1719.65 847.25)" fill="white" stroke="#0090FF"/>
+<line x1="1537.64" y1="673.583" x2="1649.52" y2="-31.2352" stroke="#69da8b " stroke-width="3" stroke-dasharray="2 2"/>
+<rect x="1332.03" y="649.397" width="413.568" height="153.838" transform="rotate(7 1332.03 649.397)" stroke="#69da8b " stroke-width="2"/>
+<rect x="1328.65" y="644.25" width="9" height="9" transform="rotate(7 1328.65 644.25)" fill="white" stroke="#69da8b "/>
+<rect x="1739.65" y="693.25" width="9" height="9" transform="rotate(7 1739.65 693.25)" fill="white" stroke="#69da8b "/>
+<rect x="1719.65" y="847.25" width="9" height="9" transform="rotate(7 1719.65 847.25)" fill="white" stroke="#69da8b "/>
 <g filter="url(#filter2_d_103_5)">
 <path d="M1700.39 740.062L1716.83 750.992L1707.93 752.812L1702.04 759.732L1700.39 740.062Z" fill="black"/>
 <path d="M1702.64 757.855L1701.27 741.56L1714.89 750.615L1707.77 752.07L1707.52 752.123L1707.35 752.322L1702.64 757.855Z" stroke="white" stroke-width="1.51416"/>
 </g>
-<rect x="1309.65" y="797.249" width="9" height="9" transform="rotate(7 1309.65 797.249)" fill="white" stroke="#0090FF"/>
-<line x1="344.081" y1="610.312" x2="195.542" y2="-8.64996" stroke="#0085FF" stroke-width="3" stroke-dasharray="2 2"/>
-<rect x="142.202" y="656.995" width="443.096" height="250.432" transform="rotate(-13.1892 142.202 656.995)" stroke="#0085FF" stroke-width="2"/>
+<rect x="1309.65" y="797.249" width="9" height="9" transform="rotate(7 1309.65 797.249)" fill="white" stroke="#69da8b "/>
+<line x1="344.081" y1="610.312" x2="195.542" y2="-8.64996" stroke="#69da8b " stroke-width="3" stroke-dasharray="2 2"/>
+<rect x="142.202" y="656.995" width="443.096" height="250.432" transform="rotate(-13.1892 142.202 656.995)" stroke="#69da8b " stroke-width="2"/>
 <rect x="171.745" y="679.726" width="9" height="9" transform="rotate(-13.1892 171.745 679.726)" fill="white" stroke="#10E3B4"/>
-<rect x="194.597" y="898.343" width="9" height="9" transform="rotate(-13.1892 194.597 898.343)" fill="white" stroke="#0085FF"/>
-<rect x="137.601" y="653.347" width="9" height="9" transform="rotate(-13.1892 137.601 653.347)" fill="white" stroke="#0085FF"/>
-<rect x="626.597" y="797.343" width="9" height="9" transform="rotate(-13.1892 626.597 797.343)" fill="white" stroke="#0085FF"/>
-<rect x="568.601" y="552.347" width="9" height="9" transform="rotate(-13.1892 568.601 552.347)" fill="white" stroke="#0085FF"/>
+<rect x="194.597" y="898.343" width="9" height="9" transform="rotate(-13.1892 194.597 898.343)" fill="white" stroke="#69da8b "/>
+<rect x="137.601" y="653.347" width="9" height="9" transform="rotate(-13.1892 137.601 653.347)" fill="white" stroke="#69da8b "/>
+<rect x="626.597" y="797.343" width="9" height="9" transform="rotate(-13.1892 626.597 797.343)" fill="white" stroke="#69da8b "/>
+<rect x="568.601" y="552.347" width="9" height="9" transform="rotate(-13.1892 568.601 552.347)" fill="white" stroke="#69da8b "/>
 <g filter="url(#filter3_bd_103_5)">
 <g clip-path="url(#clip3_103_5)">
 <rect x="149" y="664.005" width="430" height="231.555" rx="20" transform="rotate(-12.943 149 664.005)" fill="url(#paint3_linear_103_5)"/>
@@ -107,7 +107,7 @@
 <path fill-rule="evenodd" clip-rule="evenodd" d="M432.681 649.977L435.397 647.193L436.442 650.972L432.681 649.977ZM438.157 657.179L434.535 660.891L429.521 659.566L428.303 655.158L433.317 656.483L436.939 652.771L438.157 657.179ZM426.761 649.58L430.522 650.574L427.805 653.358L426.761 649.58ZM432.39 651.026L436.151 652.02L433.434 654.805L432.39 651.026ZM432.355 655.103L428.594 654.109L431.31 651.325L432.355 655.103ZM434.609 646.443L431.427 649.646L427.052 648.531L430.209 645.238L434.609 646.443ZM425.334 648.619L428.591 660.404L434.834 661.971L439.386 657.42L436.129 645.635L429.886 644.069L425.334 648.619Z" fill="white"/>
 </g>
 <g filter="url(#filter9_b_103_5)">
-<rect x="386" y="580.935" width="135.02" height="37.8388" rx="10" transform="rotate(-12.943 386 580.935)" fill="#0085FF" fill-opacity="0.3"/>
+<rect x="386" y="580.935" width="135.02" height="37.8388" rx="10" transform="rotate(-12.943 386 580.935)" fill="#69da8b " fill-opacity="0.3"/>
 </g>
 <g clip-path="url(#clip8_103_5)">
 <path d="M407.965 593.601L411.23 588.388L416.446 591.654L418.346 588.621L410.096 583.455L404.932 591.701L407.965 593.601Z" fill="#F3BA2F"/>
@@ -217,20 +217,20 @@
 <stop offset="1" stop-color="#0B0B0B" stop-opacity="0.58"/>
 </linearGradient>
 <linearGradient id="paint1_linear_103_5" x1="1642.63" y1="659.963" x2="1320.99" y2="743.689" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0085FF"/>
+<stop stop-color="#69da8b "/>
 <stop offset="1" stop-color="#202020"/>
 </linearGradient>
 <linearGradient id="paint2_linear_103_5" x1="1289.5" y1="724.692" x2="1178.5" y2="677.693" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0085FF"/>
-<stop offset="1" stop-color="#0085FF" stop-opacity="0"/>
+<stop stop-color="#69da8b "/>
+<stop offset="1" stop-color="#69da8b " stop-opacity="0"/>
 </linearGradient>
 <linearGradient id="paint3_linear_103_5" x1="477.804" y1="651.539" x2="121.951" y2="704.5" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0085FF"/>
+<stop stop-color="#69da8b "/>
 <stop offset="1" stop-color="#202020"/>
 </linearGradient>
 <linearGradient id="paint4_linear_103_5" x1="627.891" y1="650.439" x2="748.125" y2="641.851" gradientUnits="userSpaceOnUse">
-<stop stop-color="#0085FF"/>
-<stop offset="1" stop-color="#0085FF" stop-opacity="0"/>
+<stop stop-color="#69da8b "/>
+<stop offset="1" stop-color="#69da8b " stop-opacity="0"/>
 </linearGradient>
 <clipPath id="clip0_103_5">
 <rect width="23" height="23" fill="white" transform="translate(1644.88 776.026) rotate(7.24945)"/>
