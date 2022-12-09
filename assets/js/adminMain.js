@@ -1,8 +1,7 @@
 $(document).ready(function () {
-    document.cookie = "token=testToken; max-age=3600";
     if (getCookie('token')) {
         $.ajax({
-            url: URL + "/isTokenValid?token=" + 'testToken',
+            url: URL + "/isTokenValid?token=" + getCookie('token'),
             method: "get",
             dataType: "json",
             success: function (data) {
@@ -11,7 +10,7 @@ $(document).ready(function () {
                 } else {
                     $.ajax({
                         method: "GET",
-                        url: URL + "/getParams?token=" + 'testToken',
+                        url: URL + "/getParams?token=" + getCookie('token'),
                         data: $(this).serialize(),
                         success: function (currentParams) {
                             document.querySelector('#paramsForm').innerHTML = `
@@ -31,7 +30,7 @@ $(document).ready(function () {
                                 e.preventDefault();
                                 $.ajax({
                                     method: "POST",
-                                    url: URL + "/changeParams?token=" + 'testToken',
+                                    url: URL + "/changeParams?token=" + getCookie('token'),
                                     data: $(this).serialize(),
                                     success: function (requestMessage) {
                                         console.log(requestMessage)
@@ -52,8 +51,7 @@ $(document).ready(function () {
 });
        
 function getCookie(name) {
-    let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-}
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }

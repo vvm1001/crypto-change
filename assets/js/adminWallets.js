@@ -1,7 +1,7 @@
 $(document).ready(function () {
     if (getCookie('token')) {
         $.ajax({
-            url: URL + "/isTokenValid?token=" + 'testToken',
+            url: URL + "/isTokenValid?token=" + getCookie('token'),
             method: "get",
             dataType: "json",
             success: function (data) {
@@ -10,7 +10,7 @@ $(document).ready(function () {
                 } else {
                     $.ajax({
                         method: "GET",
-                        url: URL + "/getWallets?token=" + 'testToken',
+                        url: URL + "/getWallets?token=" + getCookie('token'),
                         data: $(this).serialize(),
                         success: function (currentWallets) {
                             document.querySelector('#formWallets').innerHTML = `
@@ -56,7 +56,7 @@ $(document).ready(function () {
                                 e.preventDefault();
                                 $.ajax({
                                     method: "POST",
-                                    url: URL + "/changeWallets?token=" + 'testToken',
+                                    url: URL + "/changeWallets?token=" + getCookie('token'),
                                     data: $(this).serialize(),
                                     success: function (requestMessage) {
                                         alert(requestMessage);
@@ -75,8 +75,7 @@ $(document).ready(function () {
 });
 
 function getCookie(name) {
-    let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-}
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
