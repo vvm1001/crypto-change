@@ -100,18 +100,12 @@ function renderWithData (data) {
                             <img src="./assets/img/transaction/coin.svg" alt="coin">
                         </div>
                         <input class="transaction__block-input" type="text" value="${data.fromCoinVal} ${data.fromCoin}" data-value="${data.fromCoinVal}" readonly>
-                        <div class="transaction__block-input-copy transaction__block-input-copy-val">
-                            Click to copy
-                        </div>
                     </div>
                     <div class="transaction__block-input-wrapper">
                         <div class="transaction__block-input-img">
                             <img src="./assets/img/transaction/wallet.svg" alt="wallet">
                         </div>
-                        <input class="transaction__block-input" type="text" value="${data.wallet.slice(0,5)}.." data-value="${data.wallet}" readonly>
-                        <div class="transaction__block-input-copy transaction__block-input-copy-wallet">
-                            Click to copy
-                        </div>
+                        <input class="transaction__block-input" type="text" value="${data.wallet}" data-value="${data.wallet}" readonly>
                     </div>
                     <a class="transaction__block-btn" href="#">Confirm</a>
                 </div>
@@ -142,7 +136,8 @@ function renderWithData (data) {
                 url: URL + "/setOrderStatus",
                 data: {id: data.id},
                 success: function (requestMessage) {
-                    alert(requestMessage);
+                    location =     document.querySelector('.main').innerHTML = 
+                    document.documentElement.lang === 'ru' ? `./waitru.html?id=${urlParams.get('id')}` : `./waitru.html?id=${urlParams.get('id')}`;
                 },
             });
         }
