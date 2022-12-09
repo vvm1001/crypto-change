@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <link href="./assets/css/libs/index.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/libs/fonts.css">
-    <link rel="stylesheet" href="./assets/css/styleLogin.min.css">
+    <link rel="stylesheet" href="./assets/css/styleAdmin.min.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                 <a class="logo" href="./index.html">
                     <img src="./assets/img/footer/logo.png" alt="logo">
                 </a>
-                <form action="auth.php" method="post">
+                <form id='loginForm'>
                     <input type="password" class="form-control auth__input" name="password" placeholder="Password" required>
                     <button type="submit" class="btn btn-dark auth__btn">
                         Sign In
@@ -30,11 +30,10 @@
             </div>
         </section>
     </div>
-
+    <script src="./assets/js/url.js"></script>
     <script src="./assets/js/libs/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/libs/bootstrap.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-
+    <script src="./assets/js/login.js"></script>
 </body>
 
 </html>

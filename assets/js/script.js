@@ -1,5 +1,3 @@
-const URL = 'http://127.0.0.1:5000';
-
 $(document).ready(function () {
   function exchange(send, receive, type) {
     if (type == "send") {
