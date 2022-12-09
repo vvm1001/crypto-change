@@ -5,7 +5,8 @@ $(document).ready(function () {
     $(".modal__cross").click(function () {
       $(".modal, modal-add-worker, modal-edit-worker").fadeOut();
     });
-    document.getElementById("loginForm").addEventListener('submit', function (e) {
+    $("#loginForm").submit(function (e) {
+      e.stopImmediatePropagation()
       e.preventDefault();
       $.ajax({
         method: "POST",
@@ -14,9 +15,12 @@ $(document).ready(function () {
         success: function (token) {
           document.cookie = `token=${token}; Max-Age=300`;
           location = './adminMain.html'
-      },
+        },
+        error: function () {
+          location.reload();
+        }
       });
-      location.reload();
+      
     });
   });
   

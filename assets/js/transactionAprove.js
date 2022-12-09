@@ -10,7 +10,7 @@ $(document).ready(function () {
             if (data.status === 'CREATED'){
                 renderWithData(data)
             } else {
-                location =  document.querySelector('.main').innerHTML = document.documentElement.lang === 'ru' ? './waitru.html' : './waiten.html';
+                location = './wait.html';
             }
         },
       });
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
 
 function renderWithData (data) {
-    const domRu = `
+    const htmlToRender = `
             <section class="transaction">
             <div class="container transaction__container wow animate__fadeInUp">
                 <h1 class="transaction__title">
@@ -76,57 +76,8 @@ function renderWithData (data) {
             </div>
         </section>
     `
-    const domEn = `<section class="transaction">
-    <div class="container transaction__container wow animate__fadeInUp">
-        <h1 class="transaction__title">
-            Exchange <br>
-            ${data.exchange}</h1>
-        <div class="transaction__order">
-            Order ID <span>${data.id}</span>
-        </div>
-                                <div class="transaction-1">
-                <div class="transaction__block">
-                    <div class="transaction__block-title">
-                        Pay directly to the wallet
-                    </div>
-                    <div class="transaction__block-wrapper">
-                        <div class="transaction__block-text">
-                            You send: ${data.fromCoinVal} ${data.fromCoin}                                    </div>
-                        <div class="transaction__block-text">
-                            You receive: ${data.toCoinVal} ${data.toCoin}                                   </div>
-                    </div>
-                    <div class="transaction__block-input-wrapper">
-                        <div class="transaction__block-input-img">
-                            <img src="./assets/img/transaction/coin.svg" alt="coin">
-                        </div>
-                        <input class="transaction__block-input" type="text" value="${data.fromCoinVal} ${data.fromCoin}" data-value="${data.fromCoinVal}" readonly>
-                    </div>
-                    <div class="transaction__block-input-wrapper">
-                        <div class="transaction__block-input-img">
-                            <img src="./assets/img/transaction/wallet.svg" alt="wallet">
-                        </div>
-                        <input class="transaction__block-input" type="text" value="${data.wallet}" data-value="${data.wallet}" readonly>
-                    </div>
-                    <a class="transaction__block-btn" href="#">Confirm</a>
-                </div>
-                <div class="transaction__block">
-                    <div class="transaction__block-title">
-                        Pay by scanning the QR code!
-                    </div>
-                    <div class="transaction__block-qr">
-                        <img src="https://chart.googleapis.com/chart?chs=177x177&amp;cht=qr&amp;chl=${data.wallet}&amp;choe=UTF-8" alt="QR code">
-                    </div>
-                </div>
-            </div>
-                                                                                        <div class="transaction__btns">
-            <a class="transaction__btn" href="./eng.html">
-                <img src="./assets/img/transaction/home.svg" alt="home">
-                Get back
-            </a>
-                                </div>
-    </div>
-    </section>`
-    document.querySelector('.main').innerHTML = document.documentElement.lang === 'ru' ? domRu : domEn;
+  
+    document.querySelector('.main').innerHTML = htmlToRender;
     document.querySelector('.wrapper').addEventListener('click', function (e) {
         e.preventDefault();
         if (e.target === document.querySelector('.transaction__block-btn'))
@@ -136,8 +87,8 @@ function renderWithData (data) {
                 url: URL + "/setOrderStatus",
                 data: {id: data.id},
                 success: function (requestMessage) {
-                    location =     document.querySelector('.main').innerHTML = 
-                    document.documentElement.lang === 'ru' ? `./waitru.html?id=${urlParams.get('id')}` : `./waitru.html?id=${urlParams.get('id')}`;
+                    console.log(requestMessage)
+                    // location = `./wait.html?id=${requestMessage.get('id')}`;
                 },
             });
         }
