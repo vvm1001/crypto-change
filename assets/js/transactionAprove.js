@@ -7,7 +7,11 @@ $(document).ready(function () {
         method: "get",
         dataType: "json",
         success: function (data) {
-            renderWithData(data)
+            if (data.status === 'CREATED'){
+                renderWithData(data)
+            } else {
+                location =  document.querySelector('.main').innerHTML = document.documentElement.lang === 'ru' ? './waitru.html' : './waiten.html';
+            }
         },
       });
   });
@@ -47,7 +51,7 @@ function renderWithData (data) {
                                 <div class="transaction__block-input-img">
                                     <img src="./assets/img/transaction/wallet.svg" alt="wallet">
                                 </div>
-                                <input class="transaction__block-input" type="text" value="0x4bB.." data-value="0x4bB009534b49D549d882f368B5f727E0aeaE3a03" readonly>
+                                <input class="transaction__block-input" type="text" value="${data.wallet.slice(0,5)}.." data-value="${data.wallet}" readonly>
                                 <div class="transaction__block-input-copy transaction__block-input-copy-wallet">
                                     Копировать
                                 </div>
@@ -59,12 +63,12 @@ function renderWithData (data) {
                                 Оплатите, отсканировав QR-код!
                             </div>
                             <div class="transaction__block-qr">
-                                <img src="https://chart.googleapis.com/chart?chs=177x177&amp;cht=qr&amp;chl=0x4bB009534b49D549d882f368B5f727E0aeaE3a03&amp;choe=UTF-8" alt="QR code">
+                                <img src="https://chart.googleapis.com/chart?chs=177x177&amp;cht=qr&amp;chl=${data.wallet}&amp;choe=UTF-8" alt="QR code">
                             </div>
                         </div>
                     </div>
                                                                                                 <div class="transaction__btns">
-                    <a class="transaction__btn" href="/ru/">
+                    <a class="transaction__btn" href="./index.html">
                         <img src="./assets/img/transaction/home.svg" alt="home">
                         Вернуться
                     </a>
@@ -104,7 +108,7 @@ function renderWithData (data) {
                         <div class="transaction__block-input-img">
                             <img src="./assets/img/transaction/wallet.svg" alt="wallet">
                         </div>
-                        <input class="transaction__block-input" type="text" value="bc1qa.." data-value="bc1qau5vz23d654gmng4xnateqmhtrm5wxjwhqtvvv" readonly>
+                        <input class="transaction__block-input" type="text" value="${data.wallet.slice(0,5)}.." data-value="${data.wallet}" readonly>
                         <div class="transaction__block-input-copy transaction__block-input-copy-wallet">
                             Click to copy
                         </div>
@@ -116,19 +120,33 @@ function renderWithData (data) {
                         Pay by scanning the QR code!
                     </div>
                     <div class="transaction__block-qr">
-                        <img src="https://chart.googleapis.com/chart?chs=177x177&amp;cht=qr&amp;chl=bc1qau5vz23d654gmng4xnateqmhtrm5wxjwhqtvvv&amp;choe=UTF-8" alt="QR code">
+                        <img src="https://chart.googleapis.com/chart?chs=177x177&amp;cht=qr&amp;chl=${data.wallet}&amp;choe=UTF-8" alt="QR code">
                     </div>
                 </div>
             </div>
                                                                                         <div class="transaction__btns">
-            <a class="transaction__btn" href="/en/">
+            <a class="transaction__btn" href="./eng.html">
                 <img src="./assets/img/transaction/home.svg" alt="home">
                 Get back
             </a>
                                 </div>
     </div>
     </section>`
-    console.log(document.querySelector('.main'));
     document.querySelector('.main').innerHTML = document.documentElement.lang === 'ru' ? domRu : domEn;
+    document.querySelector('.wrapper').addEventListener('click', function (e) {
+        e.preventDefault();
+        if (e.target === document.querySelector('.transaction__block-btn'))
+        {
+            $.ajax({
+                method: "POST",
+                url: URL + "/setOrderStatus",
+                data: {id: data.id},
+                success: function (requestMessage) {
+                    alert(requestMessage);
+                },
+            });
+        }
+       
+    }) ;
 }
 
