@@ -1,10 +1,12 @@
 $(document).ready(function () {
+    console.log(getCookie('token'))
     if (getCookie('token')) {
         $.ajax({
             url: URL + "/isTokenValid?token=" + getCookie('token'),
             method: "get",
             dataType: "json",
             success: function (data) {
+                console.log(data)
                 if (!data) {
                     location = '/admin.html'
                 } else {
