@@ -45,12 +45,14 @@ $(document).ready(function () {
         dataType: "json",
         success: function (data) {
           data = data[receive];
+          console.log('bottom')
           let val =
             (
-              (($(".exchange__block-input-receive").val()) * 100) /
+              ($(".exchange__block-input-receive").val()) /
               data
             ).toFixed(5) - 0;
           $(".exchange__block-input-send").val(val);
+            console.log(val)
         },
       });
     } else {

@@ -23,36 +23,5 @@ $(document).ready(function () {
     document.execCommand("copy");
     $tmp.remove();
   });
-
-  $(".transaction__block-btn").click(function (e) {
-    e.preventDefault();
-    $.ajax({
-      url: "./assets/php/changeStep.php",
-      method: "post",
-      data: {
-        id: $(".transaction__order span").text(),
-        step: 4,
-      },
-      success: function () {
-        location.reload();
-      },
-    });
-  });
-
-  $(".transaction__btn-search").click(function (e) {
-    e.preventDefault();
-    $.ajax({
-      url: "./assets/php/changeStep.php",
-      method: "post",
-      data: {
-        id: $(".transaction__order span").text(),
-        step: 4,
-      },
-      success: function () {
-        location.reload();
-      },
-    });
-  });
-
   
 });
