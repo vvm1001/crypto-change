@@ -1,5 +1,6 @@
 $(document).ready(function () {
   function exchange(send, receive, type) {
+    console.log(type)
     if (type == "send") {
       $.ajax({
         url: URL + "/handler?send=" + send + "&receive=" + receive,
@@ -305,7 +306,7 @@ $(document).ready(function () {
   $(".how-exchange__block-btn").click(function () {
     $(this).html("Сhecking your wallet...");
     $(this).css({
-      background: "#0085FF",
+      background: "#69da8b ",
       color: "#FFFFFF",
     });
 
