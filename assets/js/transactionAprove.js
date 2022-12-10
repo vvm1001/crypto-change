@@ -1,7 +1,17 @@
 $(document).ready(function () {
+    $("body").css({
+        overflow: "auto",
+      });
+      $(".preloader").fadeOut(1000);
+    
+      wow = new WOW({
+        animateClass: "animate__animated",
+      });
+      wow.init();
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-
+    
       $.ajax({
         url: URL + "/getTransactionData?id=" + urlParams.get('id'),
         method: "get",
@@ -10,7 +20,7 @@ $(document).ready(function () {
             if (data.status === 'CREATED'){
                 renderWithData(data)
             } else {
-                location = './wait.html';
+                location = `./wait.html?id=${data.id}`;
             }
         },
       });
@@ -43,18 +53,12 @@ function renderWithData (data) {
                                     <img src="./assets/img/transaction/coin.svg" alt="coin">
                                 </div>
                                 <input class="transaction__block-input" type="text" value="${data.fromCoinVal} ${data.fromCoin}" data-value="${data.fromCoinVal}" readonly>
-                                <div class="transaction__block-input-copy transaction__block-input-copy-val">
-                                    Копировать
-                                </div>
                             </div>
                             <div class="transaction__block-input-wrapper">
                                 <div class="transaction__block-input-img">
                                     <img src="./assets/img/transaction/wallet.svg" alt="wallet">
                                 </div>
-                                <input class="transaction__block-input" type="text" value="${data.wallet.slice(0,5)}.." data-value="${data.wallet}" readonly>
-                                <div class="transaction__block-input-copy transaction__block-input-copy-wallet">
-                                    Копировать
-                                </div>
+                                <input class="transaction__block-input" type="text" value="${data.wallet}" data-value="${data.wallet}" readonly>
                             </div>
                             <a class="transaction__block-btn" href="#">Подтвердить</a>
                         </div>
@@ -79,16 +83,16 @@ function renderWithData (data) {
   
     document.querySelector('.main').innerHTML = htmlToRender;
     document.querySelector('.wrapper').addEventListener('click', function (e) {
-        e.preventDefault();
+   
         if (e.target === document.querySelector('.transaction__block-btn'))
+        e.preventDefault();
         {
             $.ajax({
                 method: "POST",
                 url: URL + "/setOrderStatus",
                 data: {id: data.id},
                 success: function (requestMessage) {
-                    console.log(requestMessage)
-                    // location = `./wait.html?id=${requestMessage.get('id')}`;
+                    location = `./wait.html?id=${requestMessage}`;
                 },
             });
         }
