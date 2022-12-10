@@ -20,7 +20,7 @@ $(document).ready(function () {
             if (data.status === 'CREATED'){
                 renderWithData(data)
             } else {
-                location = './wait.html';
+                location = `./wait.html?id=${data.id}`;
             }
         },
       });

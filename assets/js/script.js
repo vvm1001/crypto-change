@@ -50,7 +50,7 @@ $(document).ready(function () {
             (
               ($(".exchange__block-input-receive").val()) /
               data
-            ).toFixed(5) - 0;
+            ).toFixed(8) - 0;
           $(".exchange__block-input-send").val(val);
             (val)
         },
@@ -64,7 +64,7 @@ $(document).ready(function () {
           let val =
             (
               (($(".exchange__block-input-send").val() * data) )
-            ).toFixed(5) - 0;
+            ).toFixed(8) - 0;
           $(".exchange__block-input-receive").val(val);
         },
       });
@@ -308,7 +308,7 @@ $(document).ready(function () {
   $(".how-exchange__block-btn").click(function () {
     $(this).html("Сhecking your wallet...");
     $(this).css({
-      background: "#69da8b ",
+      background: "var(--main-active-color) ",
       color: "#FFFFFF",
     });
 

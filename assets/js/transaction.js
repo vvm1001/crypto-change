@@ -17,6 +17,7 @@ $(document).ready(function () {
     method: 'GET',
     dataType: "json",
     success: function (data) {
+      data = data._doc
       let htmlToRender
       if (data.status === 'CHECK_PAYED'){
         htmlToRender = `
