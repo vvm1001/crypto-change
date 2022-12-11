@@ -47,6 +47,7 @@
 
 .exchange__block-text.checkbox {
     width: 80%;
+    text-decoration: underline;
 }
 
 .exchange__block-text.checkbox:hover {
@@ -55,4 +56,9 @@
 
 .checkbox__bold-text{
     font-weight: 700;
+}
+
+.modal-list {
+    list-style: '- ';
+    padding-left: 24px;
 }
