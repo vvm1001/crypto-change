@@ -64,9 +64,9 @@
 }
 
 .blocker {
-    top: 80px;
+    top: 95px !important;
 }
 
 .modal {
-    width: auto;
+    max-width: 80% !important;
 }
