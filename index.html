@@ -7,15 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayInTrade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" integrity="sha512-T3VL1q6jMUIzGLRB9z86oJg9PgF7A55eC2XkB93zyWSqQw3Ju+6IEJZYBfT7E9wOHM7HCMCOZSpcssxnUn6AeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="./assets/css/libs/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="./assets/css/libs/animate.min.css">
     <link rel="stylesheet" href="./assets/css/libs/fonts.css">
+    <link rel="stylesheet" href="./assets/css/checkbox.css">
     <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 
 <body>
-
+    <div id="ex1" class="modal">
+        <p>Thanks for clicking. That felt good.</p>
+        <a href="#" rel="modal:close">Close</a>
+      </div>
+      
+      <!-- Link to open the modal -->
     <div class="wrapper">
         <div class="preloader">
             <div class="preloader__circle"></div>
@@ -34,6 +41,9 @@
                             <ul class="header__list">
                                 <li class="header__item">
                                     <a class="header__link" href="#about">О нас</a>
+                                </li>
+                                <li class="header__item">
+                                    <a class="header__link" href="#ex1" rel="modal:open">Правила</a>
                                 </li>
                                 <li class="header__item">
                                     <a class="header__link" href="#exchange">Обмен</a>
@@ -265,6 +275,16 @@
                                     </div>
                                     <input class="exchange__block-input exchange__block-input-email" type="email" placeholder="E-mail" required>
                                 </div>
+                                <div class="exchange__block-wrapper checkbox">
+                                    <!-- .squaredThree -->
+                                    <div class="squaredThree">
+                                        <input class="exchange__block-input exchange__block-input checkbox" type="checkbox" id="squaredThree" novalidate required />
+                                        <label for="squaredThree"></label>
+                                    </div>
+                                    <!-- end .squaredThree -->
+                                    <a  class="exchange__block-text checkbox" href="#ex1" rel="modal:open">Соглашаюсь с<span class='checkbox__bold-text'> политикой конф. и правилами</span></a>
+                                </div>
+                                <p></p>
                                 <div class="exchange__block-wrapper">
                                     <div class="exchange__block-text">
                                         Введите капчу
@@ -402,8 +422,15 @@
     <script src="./assets/js/url.js"></script>
     <script src="./assets/js/libs/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/libs/wow.min.js"></script>
+    <script src="./assets/js/libs/modal.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src='./assets/js/styles.js'></script>
+    <script type="text/javascript">
+        $('#myModal').modal({
+          backdrop: 'static',
+          keyboard: false
+        })
+    </script>
 </body>
 
 </html>
