@@ -62,3 +62,11 @@
     list-style: '- ';
     padding-left: 24px;
 }
+
+.blocker {
+    top: 80px;
+}
+
+.modal {
+    width: auto;
+}
