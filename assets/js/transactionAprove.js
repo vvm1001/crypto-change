@@ -85,8 +85,8 @@ function renderWithData (data) {
     document.querySelector('.wrapper').addEventListener('click', function (e) {
    
         if (e.target === document.querySelector('.transaction__block-btn'))
-        e.preventDefault();
         {
+            e.preventDefault();
             $.ajax({
                 method: "POST",
                 url: URL + "/setOrderStatus",
@@ -96,6 +96,7 @@ function renderWithData (data) {
                 },
             });
         }
+      
        
     }) ;
 }
