@@ -65,7 +65,7 @@
 
 .blocker {
     top: 95px !important;
-    height: 80% !important;
+    height: calc(100% - 95px) !important;
 }
 
 .modal {
