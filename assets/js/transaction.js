@@ -105,6 +105,11 @@ $(document).ready(function () {
         `
       }
       document.querySelector('.main').innerHTML = htmlToRender;
+      document.querySelector('.transaction__btn')
+        .addEventListener('click', (e)=> {
+          e.preventDefault();
+        location = location.protocol + '//' + location.host;
+      })
     }
   });
 });

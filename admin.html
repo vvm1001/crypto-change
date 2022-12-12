@@ -35,6 +35,13 @@
     <script src="./assets/js/libs/bootstrap.min.js"></script>
     <script src="./assets/js/login.js"></script>
     <script src='./assets/js/styles.js'></script>
+    <script>
+        document.querySelector('.logo')
+            .addEventListener('click', (e)=> {
+                e.preventDefault();
+                location = location.protocol + '//' + location.host;
+            })     
+    </script>
 </body>
 
 </html>
